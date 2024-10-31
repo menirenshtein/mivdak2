@@ -1,4 +1,5 @@
-import Page from './components/page/page'
+import Page from "./components/Page/Page"
+
 
 const App = () => {
   return (
