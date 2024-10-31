@@ -8,10 +8,10 @@ const missionList: MissionInterface[] = await getAllMissions()
 
 const Page:React.FC = () => {
   const [missions, setMissions] = useState<MissionInterface[]>([])
-
+  
   const loadMission = async ()=>{
     try {
-      const data: MissionInterface[] = missionList;
+      const data: MissionInterface[] = await getAllMissions()
       setMissions(data) 
     } catch (error) {
       throw new Error('not give')
@@ -29,8 +29,8 @@ const Page:React.FC = () => {
       const data = await updateMission(missionFound._id!)
     }
     
-    console.log(missionFound?.status);
     setMissions([...tempMissionList])
+    loadMission()
   }
 
   const handleAddMission = async (newMission:MissionInterface)=>{
@@ -38,6 +38,7 @@ const Page:React.FC = () => {
     tempMissionList.push(newMission)
     setMissions([...tempMissionList])
     const data = await postNewMission(newMission)
+    loadMission()
   }
   const handleDeleteMission = async (mission_id:string) =>{
     const a:void = await deleteMission(mission_id)  
@@ -48,7 +49,6 @@ const Page:React.FC = () => {
     <div className="Page">
         <Form/>
         <MissionList missionList={missionList} handleChangeStatus={handleChangeStatus} handleAddMission={handleAddMission} handleDeleteMission={handleDeleteMission}/>
-
     </div>
   )
 }

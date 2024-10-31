@@ -8,8 +8,8 @@ import { postNewMission } from '../../Requests';
 const Form = () => {
     const [formData, setFormData] = useState({
         name: '',
-        status: '',
-        priority: '',
+        status: 'Pending',
+        priority: 'High',
         description: '',        
     });
     
