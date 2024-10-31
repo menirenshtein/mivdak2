@@ -15,7 +15,8 @@ export const getAllMissions = async (): Promise<MissionInterface[]> => {
 
 export const postNewMission = async (mission: MissionInterface): Promise<MissionInterface> => {
   try {
-    const response: AxiosResponse = await axios.post(`${URl}${API_KEY}`, mission);
+    const response: AxiosResponse = await axios.post(`${URl}${API_KEY}`,mission);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     throw new Error("filed to post new mission");

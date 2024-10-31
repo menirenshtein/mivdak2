@@ -23,6 +23,7 @@ const Form = () => {
     
     const handleSubmit  = async (event: any) =>{
         event.preventDefault();
+        console.log(formData);
         const data = await postNewMission(formData)
     }
 
@@ -37,9 +38,9 @@ const Form = () => {
         <form onSubmit={handleSubmit } className='form'>
 
             <input type="text" name='name' placeholder='name' onChange={handleChange}/>
-            <select name="status"  onChange={handleChange}>
-                <option value="Pending" >Pending</option>
-                <option value="Progress" >in Progress</option>
+            <select name="status" onChange={handleChange}>
+                <option value="pending" >pending</option>
+                <option value="in Progress" >progress</option>
                 <option value="Completed" >Completed</option>
             </select>
 
@@ -48,7 +49,7 @@ const Form = () => {
                 <option value="Low">Low</option>
             </select>
 
-            <input type="text" placeholder='Description' name='description' onChange={handleChange}/>
+            <input type="text" placeholder='description' name='description' onChange={handleChange}/>
             <input type="submit" />
 
         </form>
