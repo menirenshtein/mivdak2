@@ -1,5 +1,5 @@
 import MissionInterface from '../../types/Mission';
-import Mission from '../mission/mission';
+import Mission from '../mission/Mission';
 
 interface missionListProps{
     missionList: MissionInterface[];
@@ -14,7 +14,7 @@ const MissionList:React.FC<missionListProps> = ({missionList, handleChangeStatus
   
 
   return (
-    <div className=''>
+    <div className='MissionList'>
         {missionList.map((mission)=>{
             return <Mission mission={mission} key={mission._id} handleChangeStatus={handleChangeStatus} handleAddMission={handleAddMission} handleDeleteMission={handleDeleteMission}/>
         })}

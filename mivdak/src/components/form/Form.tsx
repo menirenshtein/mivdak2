@@ -50,7 +50,7 @@ const Form = () => {
             </select>
 
             <input type="text" placeholder='description' name='description' onChange={handleChange}/>
-            <input type="submit" />
+            <button type='submit' className='AddBtn'> Add Mission</button>
 
         </form>
 

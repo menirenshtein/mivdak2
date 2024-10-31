@@ -48,7 +48,8 @@ const Page:React.FC = () => {
   return (
     <div className="Page">
         <Form/>
-        <MissionList missionList={missionList} handleChangeStatus={handleChangeStatus} handleAddMission={handleAddMission} handleDeleteMission={handleDeleteMission}/>
+        <h3>Missions</h3>
+        <MissionList missionList={missions} handleChangeStatus={handleChangeStatus} handleAddMission={handleAddMission} handleDeleteMission={handleDeleteMission}/>
     </div>
   )
 }
